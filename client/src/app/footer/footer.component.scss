@@ -1,0 +1,35 @@
+@import '~src/styles.scss';
+
+.app-footer {
+    display: flex;
+    width: 98vw;
+    height: auto;
+    padding: 2vh 1vw;
+    justify-content: space-around;
+    align-items: center;
+    background-color: mat-color($Projeto3DSW-primary);
+    color: white;
+}
+
+.footer-info {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 400;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:visited {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
