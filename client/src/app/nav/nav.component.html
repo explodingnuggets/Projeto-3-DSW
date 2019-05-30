@@ -4,5 +4,7 @@
   <button mat-button class="nav-button" routerLink="/teatros">Teatros</button>
   <button mat-button class="nav-button" routerLink="/sites">Sites</button>
   <span class="spacer"></span>
-  <button mat-button class="nav-button" routerLink="/login">Entrar</button>
+  <button mat-button class="nav-button" routerLink="/login" *ngIf="!loggedIn()">Entrar</button>
+  <span class="nav-username" *ngIf="loggedIn()">Olá {{ getUsername() }}</span>
+  <button mat-button class="nav-button" (click)="logout()" *ngIf="loggedIn()">Sair</button>
 </mat-toolbar>

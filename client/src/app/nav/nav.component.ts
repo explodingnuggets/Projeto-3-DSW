@@ -12,4 +12,15 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUsername() {
+    return sessionStorage.getItem('username');
+  }
+
+  loggedIn() {
+    return (sessionStorage.getItem('logged_in') === 'true') ? true : false;
+  }
+
+  logout() {
+    sessionStorage.clear();
+  }
 }
