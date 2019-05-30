@@ -1,0 +1,18 @@
+.flex-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .navbar {
+        flex: 0 1 auto;
+    }
+
+    .content {
+        flex: 1 1 auto;
+    }
+
+    .footer {
+        flex: 0 1 auto;
+        height: auto;
+    }
+}
