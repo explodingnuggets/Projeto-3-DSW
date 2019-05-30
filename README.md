@@ -27,7 +27,7 @@ endereço/URL do site de venda de ingressos, CNPJ do teatro, nome da peça,
 preço e dia/horário.
 
 ## Funcionalidades necessárias
-- [ ]  Operações CRUD 1 de sites de venda de ingressos (requer login de
+- [ ]  Operações CRUD de sites de venda de ingressos (requer login de
 administrador)
 - [ ] Operações CRUD de teatros (requer login de administrador)
 - [ ] Listagem de todos os teatros em uma única página (não requer login)
