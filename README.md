@@ -8,6 +8,9 @@
 - Executar em outro terminal, no diretório `./client` os comandos:
     1. `npm install`
     2. `npm start`
+- Entrar com as credenciais:
+    - Email: `admin@email.com`
+    - Senha: `admin`
 
 ## Descrição
 
