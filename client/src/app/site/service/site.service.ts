@@ -28,8 +28,8 @@ export class SiteService extends BaseAPIService {
     }
   }
 
-  update(id: string, site: Site) {
-
+  update(id: string, site: Site): Observable<Site> {
+    return this.authHttp.put<Site>(this.url + '/' + id, site);
   }
 
   delete(id: string) {

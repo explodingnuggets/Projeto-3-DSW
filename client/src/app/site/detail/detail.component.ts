@@ -13,6 +13,7 @@ import Site from '../model/site.model';
 })
 export class DetailComponent extends BaseAPIComponent implements OnInit {
   private id: string;
+  private site: Site;
   private siteForm = new FormGroup({
     name: new FormControl(''),
     url: new FormControl(''),
@@ -27,7 +28,18 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
+      this.refresh();
     });
+  }
+
+  refresh() {
+    if (this.id) {
+      this.service.read(this.id).subscribe((site: Site) => {
+        this.site = site;
+        const {id, ...formData} = site;
+        this.siteForm.setValue(formData);
+      }, (err) => this.parseError(err));
+    }
   }
 
   create() {
@@ -38,6 +50,19 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
 
       this.service.create(site).subscribe((site: Site) => {
         this.router.navigate(['/site', site.id]);
+      }, (err) => this.parseError(err));
+    }
+  }
+
+  update() {
+    if (this.siteForm.valid) {
+      const site: Site = {
+        ...this.siteForm.getRawValue()
+      };
+
+      this.service.update(this.id, site).subscribe((site: Site) => {
+        this.successUpdate();
+        this.refresh();
       }, (err) => this.parseError(err));
     }
   }
