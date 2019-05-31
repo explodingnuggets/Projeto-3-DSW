@@ -1,6 +1,6 @@
-export class Site {
+export default class Site {
     id?: number;
-    url: string;
     name: string;
+    url: string;
     phone: string;
-};
+}

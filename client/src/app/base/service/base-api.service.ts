@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export abstract class BaseApiService extends BaseService {
+export abstract class BaseAPIService extends BaseService {
 
-  constructor(private http: HttpClient, private authHttp: AuthClientService) {
+  constructor(protected http: HttpClient, protected authHttp: AuthClientService) {
     super();
   }
 

@@ -6,10 +6,18 @@ import { MatSnackBar } from '@angular/material';
   selector: 'app-base-api',
   styleUrls: []
 })
-export abstract class BaseAPIComponent extends BaseComponent {
+export class BaseAPIComponent extends BaseComponent {
 
   constructor(protected snack: MatSnackBar) {
     super(snack);
+  }
+
+  parseError(err: any) {
+    if (err.status === 401 || err.status === 403) {
+      this.errorPermission();
+    } else {
+      this.errorUnknown();
+    }
   }
 
   successUpdate() {

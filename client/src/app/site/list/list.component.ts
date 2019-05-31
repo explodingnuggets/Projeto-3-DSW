@@ -1,39 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { Site } from '../models/site.model';
-import { SiteService } from '../services/site.service';
+import { Component } from '@angular/core';
+import { BaseAPIComponent } from 'src/app/base/base-api/base-api.component';
 import { MatSnackBar } from '@angular/material';
+import Site from '../model/site.model';
+import { SiteService } from '../service/site.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
-  columns: string[] = ['name', 'url', 'phone'];
-  sites: Site[];
+export class ListComponent extends BaseAPIComponent {
+  private columns = ['name', 'url', 'phone'];
+  private sites: Site[];
 
-  constructor(private siteService: SiteService, private snackbar: MatSnackBar) {
+  constructor(protected snack: MatSnackBar, private service: SiteService) { 
+    super(snack);
+    this.refresh();
   }
 
-  ngOnInit() {
-    this.refreshList();
-  }
-
-  refreshList() {
-    this.siteService.list().subscribe((data: Site[]) => {
-      this.sites = data;
-    }, (err) => {
-      if (err.status === 401 || err.status === 403) {
-        this.showError('Você não tem permissão para ver isso', 'OK');
-      } else {
-        this.showError('Erro desconhecido', 'OK');
-      }
-    });
-  }
-
-  showError(message: string, action?: string) {
-    this.snackbar.open(message, action, {
-      duration: 5000
-    });
+  refresh() {
+    this.service.read().subscribe((sites: Site[]) => {
+      this.sites = sites;
+    }, (err) => this.parseError(err));
   }
 }
