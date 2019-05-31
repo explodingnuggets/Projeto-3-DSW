@@ -9,7 +9,7 @@ import AuthInfo from '../model/auth-info.model';
 })
 export class BaseComponent {
 
-  constructor(private snack: MatSnackBar) { }
+  constructor(protected snack: MatSnackBar) { }
 
   getAuthInfo(): AuthInfo {
     return {
