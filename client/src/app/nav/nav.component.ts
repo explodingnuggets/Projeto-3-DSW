@@ -18,7 +18,7 @@ export class NavComponent implements OnInit {
   }
 
   loggedIn() {
-    return (sessionStorage.getItem('logged_in') === 'true') ? true : false;
+    return (sessionStorage.getItem('username')) ? true : false;
   }
 
   logout() {
