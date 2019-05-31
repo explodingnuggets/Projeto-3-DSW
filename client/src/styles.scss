@@ -35,7 +35,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex: 1 1 auto;
 }
 
-.common-card-container {
+.column-centered {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -44,27 +44,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     align-items: center;
 }
 
-.common-card {
-    width: 90vw;
+.detail-card {
+    width: 90%;
     max-width: 600px;
     margin: 10vh 0;
 
-    .common-card-content {
+    .detail-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 3vh;
+        margin-top: 5%;
 
-        .common-field {
+        .detail-field {
             width: 90%;
             max-width: 400px;
-            margin-top: 1vh;
         }
     }
 
-    .common-card-actions {
+    .detail-actions {
         display: flex;
-        flex-direction: row;
         justify-content: space-evenly;
     }
 }
