@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthClientService } from 'src/app/base/service/auth-client.service';
 import Site from '../model/site.model';
 import { Observable } from 'rxjs';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class SiteService extends BaseAPIService {
   }
 
   create(site: Site) {
-
+    return this.authHttp.post<Site>(this.url, site);
   }
 
   read(id?: string): Observable<Site | Site[]> {

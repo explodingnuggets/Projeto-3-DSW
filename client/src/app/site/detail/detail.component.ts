@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BaseAPIComponent } from 'src/app/base/base-api/base-api.component';
 import { MatSnackBar } from '@angular/material';
 import { SiteService } from '../service/site.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import Site from '../model/site.model';
 
 @Component({
   selector: 'app-detail',
@@ -19,7 +20,7 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
   });
 
   constructor(protected snack: MatSnackBar, private service: SiteService,
-    private route: ActivatedRoute) {
+    private router: Router, private route: ActivatedRoute) {
     super(snack);
   }
 
@@ -29,4 +30,15 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
     });
   }
 
+  create() {
+    if (this.siteForm.valid) {
+      const site: Site = {
+        ...this.siteForm.getRawValue()
+      };
+
+      this.service.create(site).subscribe((site: Site) => {
+        this.router.navigate(['/site', site.id]);
+      }, (err) => this.parseError(err));
+    }
+  }
 }
