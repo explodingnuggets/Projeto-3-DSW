@@ -19,7 +19,7 @@
       <mat-card-actions class="detail-actions">
         <button mat-raised-button color="primary" *ngIf="this.id === null" (click)="create()">Criar</button>
         <button mat-raised-button color="primary" *ngIf="this.id !== null" (click)="update()">Salvar</button>
-        <button mat-button color="warn" *ngIf="this.id !== null">Apagar</button>
+        <button mat-button color="warn" *ngIf="this.id !== null" (click)="delete()">Apagar</button>
       </mat-card-actions>
     </form>
   </mat-card>

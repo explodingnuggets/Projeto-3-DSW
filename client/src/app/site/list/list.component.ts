@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseAPIComponent } from 'src/app/base/base-api/base-api.component';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 import Site from '../model/site.model';
 import { SiteService } from '../service/site.service';
 
@@ -13,8 +13,9 @@ export class ListComponent extends BaseAPIComponent {
   private columns = ['name', 'url', 'phone'];
   private sites: Site[];
 
-  constructor(protected snack: MatSnackBar, private service: SiteService) { 
-    super(snack);
+  constructor(protected snack: MatSnackBar, protected dialog: MatDialog,
+    private service: SiteService) { 
+    super(snack, dialog);
     this.refresh();
   }
 

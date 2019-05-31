@@ -32,7 +32,7 @@ export class SiteService extends BaseAPIService {
     return this.authHttp.put<Site>(this.url + '/' + id, site);
   }
 
-  delete(id: string) {
-
+  delete(id: string): Observable<Site> {
+    return this.authHttp.delete<Site>(this.url + '/' + id);
   }
 }

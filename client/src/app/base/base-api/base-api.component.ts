@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
+import { RemoveDialogComponent } from '../remove-dialog/remove-dialog.component';
 
 @Component({
   selector: 'app-base-api',
@@ -8,7 +9,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class BaseAPIComponent extends BaseComponent {
 
-  constructor(protected snack: MatSnackBar) {
+  constructor(protected snack: MatSnackBar, protected dialog: MatDialog) {
     super(snack);
   }
 
@@ -18,6 +19,15 @@ export class BaseAPIComponent extends BaseComponent {
     } else {
       this.errorUnknown();
     }
+  }
+
+  deleteDialog() {
+    const dialogRef = this.dialog.open(RemoveDialogComponent, {
+      width: '95vw',
+      maxWidth: '400px'
+    });
+
+    return dialogRef.afterClosed();
   }
 
   successUpdate() {

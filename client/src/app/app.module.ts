@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SiteModule } from './site/site.module';
+import { RemoveDialogComponent } from './base/remove-dialog/remove-dialog.component';
+import { BaseModule } from './base/base.module';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { SiteModule } from './site/site.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BaseModule,
     SiteModule,
     MatButtonModule,
     MatCardModule,
@@ -35,6 +38,9 @@ import { SiteModule } from './site/site.module';
     MatInputModule,
     MatToolbarModule,
     MatSnackBarModule
+  ],
+  entryComponents: [
+    RemoveDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

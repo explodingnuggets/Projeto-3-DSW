@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseAPIComponent } from 'src/app/base/base-api/base-api.component';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 import { SiteService } from '../service/site.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -20,9 +20,10 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
     phone: new FormControl('')
   });
 
-  constructor(protected snack: MatSnackBar, private service: SiteService,
-    private router: Router, private route: ActivatedRoute) {
-    super(snack);
+  constructor(protected snack: MatSnackBar, protected dialog: MatDialog,
+    private service: SiteService, private router: Router,
+    private route: ActivatedRoute) {
+    super(snack, dialog);
   }
 
   ngOnInit() {
@@ -65,5 +66,15 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
         this.refresh();
       }, (err) => this.parseError(err));
     }
+  }
+
+  delete() {
+    this.deleteDialog().subscribe((result) => {
+      if (result.delete) {
+        this.service.delete(this.id).subscribe(() => {
+          this.router.navigate(['/site']);
+        }, (err) => this.parseError(err));
+      }
+    });
   }
 }

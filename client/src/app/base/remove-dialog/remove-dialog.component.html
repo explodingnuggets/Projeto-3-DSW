@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Deseja remover?</h1>
+<div mat-dialog-content>
+  <p>Esse item será deletado <strong>permanentemente</strong>.</p>
+  <p><strong>Essa operação é irreversível</strong></p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="confirm()">Confirmar</button>
+  <button mat-raised-button color="primary" (click)="cancel()">Cancelar</button>
+</div>
