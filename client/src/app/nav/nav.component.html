@@ -1,8 +1,8 @@
 <mat-toolbar class="mat-elevation-z6" color="primary">
   <mat-icon routerLink="/">theaters</mat-icon>
-  <button mat-button class="nav-button" routerLink="/promocoes">Promoções</button>
-  <button mat-button class="nav-button" routerLink="/teatros">Teatros</button>
-  <button mat-button class="nav-button" routerLink="/sites">Sites</button>
+  <button mat-button class="nav-button" routerLink="/promocao">Promoções</button>
+  <button mat-button class="nav-button" routerLink="/teatro">Teatros</button>
+  <button mat-button class="nav-button" routerLink="/site">Sites</button>
   <span class="spacer"></span>
   <button mat-button class="nav-button" routerLink="/login" *ngIf="!loggedIn()">Entrar</button>
   <span class="nav-username" *ngIf="loggedIn()">Olá {{ getUsername() }}</span>
