@@ -26,4 +26,8 @@ export class BaseComponent {
       duration: 4000
     });
   }
+
+  errorUnknown() {
+    this.showMessage('Erro desconhecido', 'OK');
+  }
 }
