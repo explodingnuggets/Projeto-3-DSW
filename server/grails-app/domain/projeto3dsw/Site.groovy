@@ -9,6 +9,6 @@ class Site {
     static constraints = {
         url nullable: false, blank: false
         name nullable: false, blank: false
-        phone nullable: false, blank: false
+        phone nullable: false, blank: false, size: 10..11
     }
 }
