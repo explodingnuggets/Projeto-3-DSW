@@ -4,9 +4,10 @@ import { ListComponent } from './list/list.component';
 import { SiteRoutingModule } from './site-routing.module';
 import { MatTableModule, MatSnackBarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [ListComponent, DetailComponent],
   imports: [
     CommonModule,
     HttpClientModule,
