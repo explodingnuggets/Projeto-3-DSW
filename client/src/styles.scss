@@ -34,3 +34,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer {
     flex: 1 1 auto;
 }
+
+.column-centered {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-card {
+    width: 90%;
+    max-width: 600px;
+    margin: 10vh 0;
+
+    .detail-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+
+        .detail-field {
+            width: 90%;
+            max-width: 400px;
+        }
+    }
+
+    .detail-actions {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

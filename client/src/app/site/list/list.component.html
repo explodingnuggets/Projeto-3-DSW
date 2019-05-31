@@ -1,0 +1,26 @@
+<mat-table [dataSource]="sites" class="mat-elevation-z6">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let site">{{site.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef>URL</mat-header-cell>
+    <mat-cell *matCellDef="let site"><a href="http://{{site.url}}">{{site.url}}</a></mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <mat-header-cell *matHeaderCellDef>Telefone</mat-header-cell>
+    <mat-cell *matCellDef="let site">{{site.phone}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-footer-cell *matFooterCellDef>
+      <button mat-raised-button color="primary" routerLink="/site/create">Adicionar</button>
+    </mat-footer-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let element; columns: columns;" routerLink="/site/{{element.id}}"></mat-row>
+  <mat-footer-row *matFooterRowDef="['actions']"></mat-footer-row>
+</mat-table>

@@ -1,0 +1,26 @@
+<div class="column-centered">
+  <mat-card class="detail-card">
+    <mat-card-header>
+      <mat-card-title *ngIf="this.id === null">Criar site</mat-card-title>
+      <mat-card-title *ngIf="this.id !== null">Detalhes do site</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="siteForm">
+      <mat-card-content class="detail-content">
+        <mat-form-field class="detail-field">
+          <input matInput formControlName="name" placeholder="Nome">
+        </mat-form-field>
+        <mat-form-field class="detail-field">
+          <input matInput formControlName="url" placeholder="URL">
+        </mat-form-field>
+        <mat-form-field class="detail-field">
+          <input matInput formControlName="phone" placeholder="Telefone">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="detail-actions">
+        <button mat-raised-button color="primary" *ngIf="this.id === null" (click)="create()">Criar</button>
+        <button mat-raised-button color="primary" *ngIf="this.id !== null" (click)="update()">Salvar</button>
+        <button mat-button color="warn" *ngIf="this.id !== null" (click)="delete()">Apagar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
