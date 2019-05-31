@@ -15,8 +15,8 @@ export class TeatroService extends BaseAPIService {
     super(http, authHttp);
   }
 
-  create(teatro: Teatro) {
-
+  create(teatro: Teatro): Observable<Teatro> {
+    return this.authHttp.post<Teatro>(this.url, teatro);
   }
 
   read(id?: string): Observable<Teatro | Teatro[]> {
