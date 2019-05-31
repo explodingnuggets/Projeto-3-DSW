@@ -33,7 +33,7 @@ export class AuthClientService extends BaseService {
 
     this.http.post(this.url, data).subscribe((data: Auth) => {
       sessionStorage.setItem('access_token', data.access_token);
-      sessionStorage.setItem('expires_at', (Date.now() + data.expires_in).toString());
+      sessionStorage.setItem('expires_at', (Date.now() + data.expires_in * 1000).toString());
     }, (err: any) => {
       console.error(err);
       sessionStorage.clear();
