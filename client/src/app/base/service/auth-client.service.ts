@@ -9,6 +9,7 @@ import Auth from '../model/auth.model';
 })
 export class AuthClientService extends BaseService {
   private url = this.baseUrl + '/login';
+  private oauthUrl = 'http://localhost:8080/oauth/access_token';
 
   constructor(private http: HttpClient) {
     super();
@@ -17,7 +18,7 @@ export class AuthClientService extends BaseService {
   private getHeaders(): {[header: string]: string} {
     const expirationAt = parseInt(sessionStorage.getItem('expires_at'));
 
-    if (Date.now() >= expirationAt) {
+    if (Date.now() >= expirationAt && sessionStorage.getItem('refresh_token')) {
       this.refreshToken();
     }
 
@@ -27,11 +28,14 @@ export class AuthClientService extends BaseService {
   }
 
   private refreshToken() {
-    let data = new URLSearchParams();
-    data.set('grant_type', 'refresh_token');
-    data.set('refresh_token', sessionStorage.getItem('refresh_token'));
+    const refreshToken = sessionStorage.getItem('refresh_token');
+    const data = `grant_type=refresh_token&refresh_token=${refreshToken}`;
 
-    this.http.post(this.url, data).subscribe((data: Auth) => {
+    this.http.post(this.oauthUrl, data, {
+      headers: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      }
+    }).subscribe((data: Auth) => {
       sessionStorage.setItem('access_token', data.access_token);
       sessionStorage.setItem('expires_at', (Date.now() + data.expires_in * 1000).toString());
     }, (err: any) => {
