@@ -44,6 +44,18 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  delete() {
+    this.siteService.delete(this.site.id.toString()).subscribe(() => {
+      this.router.navigate(['/site']);
+    }, (err) => {
+      if (err.status === 401 || err.status === 403) {
+        this.permissionError();
+      } else {
+        this.unknownError();
+      }
+    });
+  }
+
   refreshData(id?: string) {
     this.siteService.get(id || this.site.id.toString()).subscribe((data: Site) => {
       this.site = data;

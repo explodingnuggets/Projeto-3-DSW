@@ -22,4 +22,8 @@ export class SiteService {
   update(id: string, site: Site) {
     return this.http.put(this.url + '/' + id, site);
   }
+
+  delete(id: string) {
+    return this.http.delete(this.url + '/' + id);
+  }
 }
