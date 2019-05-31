@@ -1,5 +1,5 @@
 export class Site {
-    id: number;
+    id?: number;
     url: string;
     name: string;
     phone: string;
