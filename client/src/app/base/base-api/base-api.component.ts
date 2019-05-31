@@ -37,8 +37,4 @@ export class BaseAPIComponent extends BaseComponent {
   errorPermission() {
     this.showMessage('Você não tem permissões para isso', 'OK');
   }
-
-  errorUnknown() {
-    this.showMessage('Erro desconhecido', 'OK');
-  }
 }

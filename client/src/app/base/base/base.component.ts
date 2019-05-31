@@ -11,19 +11,27 @@ export class BaseComponent {
 
   constructor(protected snack: MatSnackBar) { }
 
-  getAuthInfo(): AuthInfo {
-    return {
-      username: sessionStorage.getItem('username'),
-      admin: (sessionStorage.getItem('is_admin') === 'true'),
-      expiresAt: parseInt(sessionStorage.getItem('expires_at')),
-      refreshToken: sessionStorage.getItem('refresh_token'),
-      accessToken: sessionStorage.getItem('access_token')
-    };
+  getAuthInfo(): AuthInfo | null {
+    if (sessionStorage.getItem('username')) {
+      return {
+        username: sessionStorage.getItem('username'),
+        admin: (sessionStorage.getItem('is_admin') === 'true'),
+        expiresAt: parseInt(sessionStorage.getItem('expires_at')),
+        refreshToken: sessionStorage.getItem('refresh_token'),
+        accessToken: sessionStorage.getItem('access_token')
+      };
+    }
+
+    return null;
   }
 
   showMessage(message: string, action?: string) {
     this.snack.open(message, action, {
       duration: 4000
     });
+  }
+
+  errorUnknown() {
+    this.showMessage('Erro desconhecido', 'OK');
   }
 }

@@ -8,19 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule, MatSnackBarModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SiteModule } from './site/site.module';
 import { RemoveDialogComponent } from './base/remove-dialog/remove-dialog.component';
 import { BaseModule } from './base/base.module';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    FooterComponent,
-    LoginComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +29,7 @@ import { BaseModule } from './base/base.module';
     ReactiveFormsModule,
     HttpClientModule,
     BaseModule,
+    LoginModule,
     SiteModule,
     MatButtonModule,
     MatCardModule,
