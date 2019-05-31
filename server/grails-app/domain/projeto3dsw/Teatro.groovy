@@ -2,13 +2,13 @@ package projeto3dsw
 
 class Teatro {
 
-    String cpnj;
-    String nome;
-    String cidade;
+    String cnpj;
+    String name;
+    String city;
 
     static constraints = {
-        cpnj nullable: false, blank: false, unique: true
-        nome nullable: false, blank: false
-        cidade nullable: false, blank: false
+        cnpj nullable: false, blank: false, unique: true
+        name nullable: false, blank: false
+        city nullable: false, blank: false
     }
 }
