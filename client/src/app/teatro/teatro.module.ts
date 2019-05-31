@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { TeatroRoutingModule } from './teatro-routing.module';
 import { BaseModule } from '../base/base.module';
-import { MatButtonModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatTableModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [ListComponent],
@@ -12,7 +12,9 @@ import { MatButtonModule, MatTableModule } from '@angular/material';
     TeatroRoutingModule,
     BaseModule,
     MatButtonModule,
-    MatTableModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTableModule
   ]
 })
 export class TeatroModule { }
