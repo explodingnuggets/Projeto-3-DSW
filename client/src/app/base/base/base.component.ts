@@ -15,7 +15,7 @@ export class BaseComponent {
     return {
       username: sessionStorage.getItem('username'),
       admin: (sessionStorage.getItem('is_admin') === 'true'),
-      expiresIn: parseInt(sessionStorage.getItem('expires_in')),
+      expiresAt: parseInt(sessionStorage.getItem('expires_at')),
       refreshToken: sessionStorage.getItem('refresh_token'),
       accessToken: sessionStorage.getItem('access_token')
     };

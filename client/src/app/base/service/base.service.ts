@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BaseService {
-  protected baseUrl = 'http://localhost:8080/';
+  protected baseUrl = 'http://localhost:8080/api';
 
   constructor() { }
 }

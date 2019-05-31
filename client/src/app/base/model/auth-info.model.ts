@@ -1,7 +1,7 @@
 export default class AuthInfo {
     username: string;
     admin: boolean;
-    expiresIn: number;
+    expiresAt: number;
     refreshToken: string;
     accessToken: string;
 }
