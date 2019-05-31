@@ -7,7 +7,7 @@ class Teatro {
     String cidade;
 
     static constraints = {
-        cpnj nullable: false, blank: false, unique: true,
+        cpnj nullable: false, blank: false, unique: true
         nome nullable: false, blank: false
         cidade nullable: false, blank: false
     }
