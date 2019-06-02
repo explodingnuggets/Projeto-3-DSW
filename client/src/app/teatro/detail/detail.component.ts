@@ -61,4 +61,14 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
       }, (err) => this.parseError(err));
     }
   }
+
+  delete() {
+    this.deleteDialog().subscribe((result) => {
+      if (result.delete) {
+        this.service.delete(this.id).subscribe(() => {
+          this.router.navigate(['/teatro']);
+        }, (err) => this.parseError(err));
+      }
+    })
+  }
 }
