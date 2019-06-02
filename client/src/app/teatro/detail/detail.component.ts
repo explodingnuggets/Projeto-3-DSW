@@ -50,4 +50,15 @@ export class DetailComponent extends BaseAPIComponent implements OnInit {
       }, (err) => this.parseError(err));
     }
   }
+
+  update() {
+    if (this.teatroForm.valid) {
+      const teatro = this.teatroForm.getRawValue();
+
+      this.service.update(this.id, teatro).subscribe(() => {
+        this.successUpdate();
+        this.refresh();
+      }, (err) => this.parseError(err));
+    }
+  }
 }

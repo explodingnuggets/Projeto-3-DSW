@@ -27,8 +27,8 @@ export class TeatroService extends BaseAPIService {
     }
   }
 
-  update(id: string, teatro: Teatro) {
-
+  update(id: string, teatro: Teatro): Observable<Teatro> {
+    return this.authHttp.put<Teatro>(this.url + '/' + id, teatro);
   }
 
   delete(id: string) {
