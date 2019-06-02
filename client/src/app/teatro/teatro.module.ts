@@ -6,6 +6,7 @@ import { BaseModule } from '../base/base.module';
 import { MatButtonModule, MatTableModule, MatDialogModule, MatSnackBarModule, MatCardModule, MatInputModule, MatFormFieldModule } from '@angular/material';
 import { DetailComponent } from './detail/detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [ListComponent, DetailComponent],
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    NgxMaskModule.forRoot()
   ]
 })
 export class TeatroModule { }

@@ -6,7 +6,7 @@
 
   <ng-container matColumnDef="cnpj">
     <mat-header-cell *matHeaderCellDef>CNPJ</mat-header-cell>
-    <mat-cell *matCellDef="let teatro">{{teatro.cnpj}}</mat-cell>
+    <mat-cell *matCellDef="let teatro">{{teatro.cnpj | mask: '00.000.000/0000-00'}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="city">
