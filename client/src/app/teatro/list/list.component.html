@@ -1,0 +1,26 @@
+<mat-table [dataSource]="teatros" class="mat-elevation-z6">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let teatro">{{teatro.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cnpj">
+    <mat-header-cell *matHeaderCellDef>CNPJ</mat-header-cell>
+    <mat-cell *matCellDef="let teatro">{{teatro.cnpj | mask: '00.000.000/0000-00'}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <mat-header-cell *matHeaderCellDef>Cidade</mat-header-cell>
+    <mat-cell *matCellDef="let teatro">{{teatro.city}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-footer-cell *matFooterCellDef>
+      <button mat-raised-button color="primary" routerLink="/teatro/create">Adicionar</button>
+    </mat-footer-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let element; columns: columns;" routerLink="/teatro/{{element.id}}"></mat-row>
+  <mat-footer-row *matFooterRowDef="['actions']"></mat-footer-row>
+</mat-table>

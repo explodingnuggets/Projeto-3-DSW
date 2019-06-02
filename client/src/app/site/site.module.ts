@@ -7,6 +7,7 @@ import { MatSnackBarModule, MatTableModule, MatButtonModule, MatCardModule, MatF
 import { DetailComponent } from './detail/detail.component';
 import { RemoveDialogComponent } from '../base/remove-dialog/remove-dialog.component';
 import { BaseModule } from '../base/base.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [ListComponent, DetailComponent],
@@ -22,7 +23,8 @@ import { BaseModule } from '../base/base.module';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    NgxMaskModule.forRoot()
   ],
   entryComponents: [
     RemoveDialogComponent

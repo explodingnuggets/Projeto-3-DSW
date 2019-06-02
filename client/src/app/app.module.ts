@@ -13,6 +13,7 @@ import { SiteModule } from './site/site.module';
 import { RemoveDialogComponent } from './base/remove-dialog/remove-dialog.component';
 import { BaseModule } from './base/base.module';
 import { LoginModule } from './login/login.module';
+import { TeatroModule } from './teatro/teatro.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LoginModule } from './login/login.module';
     BaseModule,
     LoginModule,
     SiteModule,
+    TeatroModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,

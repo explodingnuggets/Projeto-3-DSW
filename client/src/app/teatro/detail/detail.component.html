@@ -1,19 +1,19 @@
 <div class="column-centered">
   <mat-card class="detail-card">
     <mat-card-header>
-      <mat-card-title *ngIf="this.id === null">Criar site</mat-card-title>
-      <mat-card-title *ngIf="this.id !== null">Detalhes do site</mat-card-title>
+      <mat-card-title *ngIf="this.id === null">Criar teatro</mat-card-title>
+      <mat-card-title *ngIf="this.id !== null">Detalhes do teatro</mat-card-title>
     </mat-card-header>
-    <form [formGroup]="siteForm">
+    <form [formGroup]="teatroForm">
       <mat-card-content class="detail-content">
         <mat-form-field class="detail-field">
           <input matInput formControlName="name" placeholder="Nome">
         </mat-form-field>
         <mat-form-field class="detail-field">
-          <input matInput formControlName="url" placeholder="URL">
+          <input matInput formControlName="cnpj" placeholder="CNPJ" mask="00.000.000/0000-00">
         </mat-form-field>
         <mat-form-field class="detail-field">
-          <input matInput formControlName="phone" placeholder="Telefone" mask="(00) 0000-00009">
+          <input matInput formControlName="city" placeholder="Cidade">
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions class="detail-actions">
