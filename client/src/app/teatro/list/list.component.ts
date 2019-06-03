@@ -24,4 +24,10 @@ export class ListComponent extends BaseAPIComponent {
       this.teatros = teatros;
     }, (err) => this.parseError(err));
   }
+
+  filter(value: string) {
+    this.service.read(undefined, value).subscribe((teatros: Teatro[]) => {
+      this.teatros = teatros;
+    }, (err) => this.parseError(err));
+  }
 }
