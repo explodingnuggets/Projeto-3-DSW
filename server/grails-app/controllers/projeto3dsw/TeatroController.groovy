@@ -14,7 +14,7 @@ class TeatroController extends RestfulController {
 
     def index() {
         if (params.city) {
-            respond Teatro.findAllByCity(params.city)
+            respond Teatro.findAllByCityLike("${params.city}%")
         } else {
             respond Teatro.list()
         }
