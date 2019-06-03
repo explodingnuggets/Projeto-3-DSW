@@ -1,3 +1,7 @@
+<mat-form-field class="filter-field">
+  <input matInput id="city" (keyup)="filter($event.target.value)" placeholder="Cidade"/>
+</mat-form-field>
+
 <mat-table [dataSource]="teatros" class="mat-elevation-z6">
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
