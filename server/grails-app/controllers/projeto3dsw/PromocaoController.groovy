@@ -11,12 +11,4 @@ class PromocaoController extends RestfulController {
     PromocaoController() {
         super(Promocao)
     }
-
-    @Override
-    protected getObjectToBind() {
-        def params = request.JSON
-        params.site = Site.findByUrl(params.site)
-        params.theater = Teatro.findByCnpj(params.theater)
-        params
-    }
 }
