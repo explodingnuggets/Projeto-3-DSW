@@ -14,6 +14,7 @@ import { RemoveDialogComponent } from './base/remove-dialog/remove-dialog.compon
 import { BaseModule } from './base/base.module';
 import { LoginModule } from './login/login.module';
 import { TeatroModule } from './teatro/teatro.module';
+import { PromocaoModule } from './promocao/promocao.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TeatroModule } from './teatro/teatro.module';
     LoginModule,
     SiteModule,
     TeatroModule,
+    PromocaoModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,

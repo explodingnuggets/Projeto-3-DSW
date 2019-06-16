@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { AuthClientService } from 'src/app/base/service/auth-client.service';
 import Site from '../model/site.model';
 import { Observable } from 'rxjs';
-import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'

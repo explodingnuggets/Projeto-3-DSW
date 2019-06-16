@@ -3,7 +3,7 @@ package projeto3dsw
 class Promocao {
 
     Site site
-    Teatro teatro
+    Teatro theater
     String name
     Double price
     Date date
@@ -12,6 +12,6 @@ class Promocao {
     static constraints = {
         name blank: false, nullable: false
         price blank: false, nullable: false
-        date blank: false, nullable: false, unique: ['site', 'teatro']
+        date blank: false, nullable: false, unique: ['site', 'theater']
     }
 }

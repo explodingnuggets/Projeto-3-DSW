@@ -1,0 +1,36 @@
+<mat-table [dataSource]="promocoes" class="mat-elevation-z6">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let promocao">{{promocao.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef>Preço</mat-header-cell>
+    <mat-cell *matCellDef="let promocao">R$ {{promocao.price}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+    <mat-cell *matCellDef="let promocao">{{promocao.date | date: 'dd-MM-yyyy HH:mm'}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="site">
+    <mat-header-cell *matHeaderCellDef>Site</mat-header-cell>
+    <mat-cell *matCellDef="let promocao">{{promocao.site.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="teatro">
+    <mat-header-cell *matHeaderCellDef>Teatro</mat-header-cell>
+    <mat-cell *matCellDef="let promocao">{{promocao.theater.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-footer-cell *matFooterCellDef>
+      <button mat-raised-button color="primary" routerLink="/promocao/create">Adicionar</button>
+    </mat-footer-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let element; columns: columns;" routerLink="/promocao/{{element.id}}"></mat-row>
+  <mat-footer-row *matFooterRowDef="['actions']"></mat-footer-row>
+</mat-table>
