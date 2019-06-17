@@ -15,20 +15,6 @@ export class NavComponent extends BaseComponent {
     super(snack);
   }
 
-  getUsername(): string {
-    const authInfo = this.getAuthInfo();
-    return (authInfo) ? authInfo.username : null;
-  }
-
-  isAdmin(): boolean {
-    const authInfo = this.getAuthInfo();
-    return (authInfo) ? authInfo.admin : false;
-  }
-
-  loggedIn(): boolean {
-    return (this.getAuthInfo()) ? true : false;
-  }
-
   logout() {
     sessionStorage.clear();
     this.router.navigate(['']);

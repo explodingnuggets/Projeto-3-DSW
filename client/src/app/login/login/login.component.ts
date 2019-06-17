@@ -40,6 +40,8 @@ export class LoginComponent extends BaseComponent {
   setAuthInfo(auth: Auth) {
     sessionStorage.setItem('username', auth.username);
     sessionStorage.setItem('is_admin', (auth.roles.includes('ROLE_ADMIN')) ? 'true' : 'false');
+    sessionStorage.setItem('is_site', (auth.roles.includes('ROLE_SITE')) ? 'true' : 'false');
+    sessionStorage.setItem('is_theater', (auth.roles.includes('ROLE_THEATER')) ? 'true' : 'false');
     sessionStorage.setItem('expires_at', (Date.now() + auth.expires_in * 1000).toString());
     sessionStorage.setItem('refresh_token', auth.refresh_token);
     sessionStorage.setItem('access_token', auth.access_token);

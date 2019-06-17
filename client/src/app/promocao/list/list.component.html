@@ -32,5 +32,7 @@
 
   <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
   <mat-row *matRowDef="let element; columns: columns;" routerLink="/promocao/{{element.id}}"></mat-row>
-  <mat-footer-row *matFooterRowDef="['actions']"></mat-footer-row>
+  <ng-container *ngIf="isTheater()">
+    <mat-footer-row *matFooterRowDef="['actions']"></mat-footer-row>
+  </ng-container>
 </mat-table>

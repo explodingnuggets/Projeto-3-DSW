@@ -5,6 +5,8 @@ class Site {
     String url;
     String name;
     String phone;
+    User user;
+    static belongsTo = User;
 
     static constraints = {
         url nullable: false, blank: false, unique: true
