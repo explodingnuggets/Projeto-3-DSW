@@ -11,4 +11,16 @@ class PromocaoController extends RestfulController {
     PromocaoController() {
         super(Promocao)
     }
+
+    @Secured(['IS_AUTHENTICATED_ANONYMOUSLY'])
+    @Override
+    def index(Integer max) {
+        super.index(max)
+    }
+
+    @Secured(['IS_AUTHENTICATED_ANONYMOUSLY'])
+    @Override
+    def show() {
+        super.show()
+    }
 }

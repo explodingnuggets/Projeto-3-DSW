@@ -12,11 +12,17 @@ class TeatroController extends RestfulController {
         super(Teatro)
     }
 
-    def index() {
+    @Secured(['IS_AUTHENTICATED_ANONYMOUSLY'])
+    def index(Integer max) {
         if (params.city) {
             respond Teatro.findAllByCityLike("${params.city}%")
         } else {
-            respond Teatro.list()
+            super.index(max)
         }
+    }
+
+    @Secured(['IS_AUTHENTICATED_ANONYMOUSLY'])
+    def show() {
+        super.show()
     }
 }
