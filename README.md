@@ -30,7 +30,7 @@ preço e dia/horário.
 - [X]  Operações CRUD de sites de venda de ingressos (requer login de
 administrador)
 - [X] Operações CRUD de teatros (requer login de administrador)
-- [ ] Listagem de todos os teatros em uma única página (não requer login)
+- [X] Listagem de todos os teatros em uma única página (não requer login)
 - [X] Listagem de todos os teatros por cidade (não requer login)
 - [ ] Criação de uma promoção de um teatro (requer login do teatro: via e-
 mail + senha). Depois de fazer login, o teatro pode cadastrar uma

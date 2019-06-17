@@ -21,11 +21,11 @@ export class TeatroService extends BaseAPIService {
 
   read(id?: string, city?: string): Observable<Teatro | Teatro[]> {
     if (id) {
-      return this.authHttp.get<Teatro>(this.url + '/' + id);
+      return this.http.get<Teatro>(this.url + '/' + id);
     } else if(city) {
-      return this.authHttp.get<Teatro[]>(this.url + `?city=${city}`);
+      return this.http.get<Teatro[]>(this.url + `?city=${city}`);
     } else {
-      return this.authHttp.get<Teatro[]>(this.url);
+      return this.http.get<Teatro[]>(this.url);
     }
   }
 

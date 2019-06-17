@@ -21,9 +21,9 @@ export class PromocaoService extends BaseAPIService {
 
   read(id?: string): Observable<Promocao | Promocao[]> {
     if (id) {
-      return this.authHttp.get(this.url + '/' + id);
+      return this.http.get<Promocao>(this.url + '/' + id);
     } else {
-      return this.authHttp.get(this.url);
+      return this.http.get<Promocao[]>(this.url);
     }
   }
 
